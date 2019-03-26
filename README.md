@@ -1,4 +1,5 @@
 <h1 align="center"><img height="150" src="./docs/icon.png" /><br>Tree JSON Generator</h1>
+<h3 align="center"><a href="https://kanitelk.github.io/tree-json-generator/">DEMO Sandbox</a></h3>
 
 <p align="center">
   <a href="https://github.com/kamranahmedse/driver.js/blob/master/license">
