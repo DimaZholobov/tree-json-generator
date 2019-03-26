@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <b>More than 150 000 nodes per second!</b></br>
   <b>Simple library for generating JSON trees</b></br>
   <sub>No external dependency, highly customizable <sub>
 </p>
@@ -45,7 +46,10 @@ import * as TreeGen from "tree-json-generator";
 ```javascript
 const config = {
   node: { // Node fields, required
-    name: "@randomName()", // 'Pipes'
+    id: "@id()", // Pipes
+    parent: "@parent()",
+    level: "@level()",
+    name: "@randomName()", 
     age: "@randomInteger(14,99)",
     email: "@randomEmail()",
     registered: "@randomBoolean(0.79)",
@@ -72,9 +76,21 @@ This allows you to generate fields values for the nodes.
 
 Prebuilded pipes:
 
+<b>`"@id()"`</b> 
+
+Random node ID
+
 <b>`"@child()"`</b> 
 
 Child field pointer
+
+<b>`"@parent()"`</b> 
+
+Field with parent node ID. (For this field, a field with an `"@id"` pipe before required.
+
+<b>`"@level()"`</b> 
+
+Node level
 
 <b>`"@randomName()"`</b> 
 
@@ -95,3 +111,28 @@ Random Integer from range
 <b>`"@randomBoolean(value = 0.5)"`</b> 
 
 Random Boolean (value - coefficient)
+
+![](./docs/split.png)
+
+## Config API
+
+<b>`node: {}`</b> 
+
+Required. Contains node fields with pipes.
+
+<b>`rootNodesNumber:`</b> 
+
+Not required. Number (5) or array range ([1, 40]). Default is 1.
+
+<b>`childNodesNumber:`</b> 
+
+Not required. Number (9) or array range ([1, 15]). Default is 1.
+
+<b>`maxLevel:`</b> 
+
+Not required. Max node level. Number (3). Default is 3.
+
+<b>`hasChildRate:`</b> 
+
+Not required. The probability that the node has children. From 0 to 1. Default is 1.
+
